@@ -16,9 +16,9 @@ class LibraryItem{
         double fileSize;
 
     public:
-        //LibraryItem();
+        LibraryItem();
         LibraryItem(string, string, string, bool, double);
-        //~LibraryItem();
+        virtual ~LibraryItem();
 
         void setName(string);
         string getName();
