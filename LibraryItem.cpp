@@ -11,7 +11,7 @@ LibraryItem::LibraryItem(string n, string rel, string dev, bool type, double siz
 }
 
 void LibraryItem::setName(string){
-    name = "Unknown";
+    name = "Unknown \n";
 }
 
 string LibraryItem::getName(){
@@ -19,7 +19,7 @@ string LibraryItem::getName(){
 }
 
 void LibraryItem::setReleaseDate(string){
-    releaseDate = "Unknown";
+    releaseDate = "Unknown \n";
 }
 
 string LibraryItem::getReleaseDate(){
@@ -27,7 +27,7 @@ string LibraryItem::getReleaseDate(){
 }
 
 void LibraryItem::setDevName(string){
-    devName = "Unknown";
+    devName = "Unknown \n";
 }
 
 string LibraryItem::getDevName(){
@@ -35,7 +35,7 @@ string LibraryItem::getDevName(){
 }
 
 void LibraryItem::setDeveloperType(bool){
-    devType = "Unknown";
+    devType = "Unknown \n";
 }
 
 bool LibraryItem::getDeveloperType(){
@@ -50,10 +50,14 @@ double LibraryItem::getFileSize(){
     return fileSize;
 }
 
-void LibraryItem::displayInfo(){
-    cout << "Game Name: \n" << name << "Release Date: \n" << releaseDate << "Developer: \n" << devName << "Game Type: \n" << devType << "Game Size: \n" << fileSize << endl;
+void LibraryItem::displayInfo()const{
+    cout << "Game Name: \n" << name << "Release Date: \n" << releaseDate << "Developer: \n" << devName << "Game Type: \n" << devType << "\nGame Size: \n" << fileSize << endl;
+
+    for (int i = 0; i < MAX_SIZE; i++){
+        cout << MAX_GAMES[i] << endl;
+    }
 }
 
 LibraryItem::~LibraryItem(){
-    cout << " Destoryed in the destructor! " << endl;
+    cout << " Destoryed in the destructor! \n" << endl;
 }
