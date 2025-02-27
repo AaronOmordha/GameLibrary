@@ -35,6 +35,8 @@ class LibraryItem{
         void setFileSize(double);
         double getFileSize();
 
+        void displayInfo();
+
     protected:
 
 };
