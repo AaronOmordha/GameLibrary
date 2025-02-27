@@ -3,8 +3,12 @@ using namespace std;
 #include <iostream>
 #include <string>
 
-main(){
+int main(){
 
+    int B;
+    
+    cout << "Enter something: ";
+    cin >> B;
     cout << "Wagwan" << endl;
 
     return 0;

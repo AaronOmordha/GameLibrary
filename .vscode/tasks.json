@@ -9,6 +9,8 @@
                 "-g",
                 "${workspaceFolder}\\main.cpp",
                 "${workspaceFolder}\\LibraryItem.cpp",
+                "${workspaceFolder}\\Game.cpp",
+                "${workspaceFolder}\\Application.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],

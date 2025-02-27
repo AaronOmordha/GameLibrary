@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+
 using namespace std;
 
 class LibraryItem{
@@ -14,6 +16,9 @@ class LibraryItem{
         double fileSize;
 
     public:
+        //LibraryItem();
+        LibraryItem(string, string, string, bool, double);
+        //~LibraryItem();
 
         void setName(string);
         string getName();
