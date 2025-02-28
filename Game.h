@@ -11,6 +11,7 @@ class Game : public LibraryItem // Declare Game as a child class of LibraryItem
     private:
     float price;
     bool free;
+
     public:
 
     // Constructors
@@ -23,6 +24,7 @@ class Game : public LibraryItem // Declare Game as a child class of LibraryItem
     float getPrice();
     bool checkFree();
     void displayInfo(); // Overriding abstract function from parent class
+
     protected:
 
 };
