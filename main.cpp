@@ -9,7 +9,7 @@ using namespace std;
 
 int main(){
 
-    LibraryItem item1;
+    Game item1;
 
     item1.setName("Gerry's_Adventure");
     item1.setDevName("Gerry_Heapes");

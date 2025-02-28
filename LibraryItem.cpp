@@ -1,14 +1,19 @@
 #include "LibraryItem.h"
+#include <iostream>
+#include <string>   
+using namespace std;
 
-LibraryItem::LibraryItem(){
+LibraryItem::LibraryItem()
+{
     name = "Unknown";
     releaseDate = "Unknown";
     devName = "Unknown";
     devType = "Unknown";
-    fileSize = 0;
+    fileSize = 0.0;
 }
 
-LibraryItem::LibraryItem(string n, string rel, string dev, string type, double size){
+LibraryItem::LibraryItem(const string& n, const string& rel, const string& dev, const string& type, double size)
+{
     name = n;
     releaseDate = rel;
     devName = dev;
@@ -16,55 +21,67 @@ LibraryItem::LibraryItem(string n, string rel, string dev, string type, double s
     fileSize = size;
 }
 
-void LibraryItem::setName(string n){
+void LibraryItem::setName(string n)
+{
     name = n;
 }
 
-string LibraryItem::getName(){
+string LibraryItem::getName()
+{
     return name;
 }
 
-void LibraryItem::setReleaseDate(string rel){
+void LibraryItem::setReleaseDate(string rel)
+{
     releaseDate = rel;
 }
 
-string LibraryItem::getReleaseDate(){
+string LibraryItem::getReleaseDate()
+{
     return releaseDate;
 }
 
-void LibraryItem::setDevName(string dev){
+void LibraryItem::setDevName(string dev)
+{
     devName = dev;
 }
 
-string LibraryItem::getDevName(){
+string LibraryItem::getDevName()
+{
     return devName;
 }
 
-void LibraryItem::setDeveloperType(string type){
+void LibraryItem::setDeveloperType(string type)
+{
     devType = type;
 }
 
-string LibraryItem::getDeveloperType(){
+string LibraryItem::getDeveloperType()
+{
     return devType;
 }
 
-void LibraryItem::setFileSize(double size){
+void LibraryItem::setFileSize(double size)
+{
     fileSize = size;
 }
 
-double LibraryItem::getFileSize(){
+double LibraryItem::getFileSize()
+{
     return fileSize;
 }
 
-void LibraryItem::displayInfo()const{
-        cout << "\nGame Name: " << name << 
-        "\nRelease Date: " << releaseDate << 
-        "\nDeveloper:" << devName << 
-        "\nGame Type: " << devType << 
-        "\nGame Size: " << fileSize 
+void LibraryItem::displayInfo()
+{
+        cout << "\nName: " << getName() << 
+        "\nRelease Date: " << getReleaseDate() << 
+        "\nDeveloper:" << getDevName() << 
+        "\nDeveloper Type: " << getDeveloperType() << 
+        "\nFile Size: " << getFileSize() 
         << endl;
     }
 
-LibraryItem::~LibraryItem(){
-    cout << "Destoryed in the destructor! \n" << endl;
+LibraryItem::~LibraryItem()
+{
+    cout << "Destroyed in the destructor! \n";
 }

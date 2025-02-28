@@ -5,11 +5,11 @@ using namespace std;
 
 // Constructors
 Game::Game() : LibraryItem(){
-    price = 0;
+    price = 0.0;
 }
 
 Game::Game(string n, string rel, string dev, string type, double size, float p) : LibraryItem(n, rel, dev, type, size){
-    price = 0.0;
+    price = p;
     if (price == 0){ // If price is 0, game is marked as free
         free = true;
     }else{
@@ -35,11 +35,12 @@ bool Game::checkFree(){
 }
 
 void Game::displayInfo(){
-    cout << "\nGame Name: " << getName() << endl;
+    LibraryItem::displayInfo();
+    /*cout << "\nGame Name: " << getName() << endl;
     cout << "Release Date: " << getReleaseDate() << endl;
     cout << "Developer Name: " << getDevName() << endl;
     cout << "Developer Type: " << getDeveloperType() << endl;
-    cout << "File Size: " << getFileSize() << "MB" << endl;
+    cout << "File Size: " << getFileSize() << "MB" << endl;*/
     cout << "Price: $" << getPrice() << endl;
     if (checkFree()){
         cout << "This game is free!" << endl;

@@ -23,7 +23,7 @@ class Game : public LibraryItem // Declare Game as a child class of LibraryItem
 
     float getPrice();
     bool checkFree();
-    void displayInfo(); // Overriding abstract function from parent class
+    void displayInfo() override; // Overriding abstract function from parent class
 
     protected:
 

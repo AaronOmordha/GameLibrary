@@ -14,13 +14,13 @@ class LibraryItem{
         string name;
         string releaseDate;
         string devName;
-        string MAX_GAMES[MAX_SIZE];
+        //string MAX_GAMES[MAX_SIZE];
         string devType;
         double fileSize;
 
     public:
         LibraryItem();
-        LibraryItem(string, string, string, string, double);
+        LibraryItem(const string& n, const string& rel, const string& dev, const string& type, double size);
         virtual ~LibraryItem();
 
         void setName(string);
@@ -38,7 +38,7 @@ class LibraryItem{
         void setFileSize(double);
         double getFileSize();
 
-        void displayInfo()const;
+        virtual void displayInfo();
 
     protected:
 
