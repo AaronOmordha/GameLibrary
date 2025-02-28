@@ -15,12 +15,12 @@ class LibraryItem{
         string releaseDate;
         string devName;
         string MAX_GAMES[MAX_SIZE];
-        bool devType;
+        string devType;
         double fileSize;
 
     public:
         LibraryItem();
-        LibraryItem(string, string, string, bool, double);
+        LibraryItem(string, string, string, string, double);
         virtual ~LibraryItem();
 
         void setName(string);
@@ -32,8 +32,8 @@ class LibraryItem{
         void setDevName(string);
         string getDevName();
 
-        void setDeveloperType(bool);
-        bool getDeveloperType();
+        void setDeveloperType(string);
+        string getDeveloperType();
 
         void setFileSize(double);
         double getFileSize();

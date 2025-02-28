@@ -1,8 +1,14 @@
 #include "LibraryItem.h"
 
-LibraryItem::LibraryItem(){}
+LibraryItem::LibraryItem(){
+    name = "Unknown";
+    releaseDate = "Unknown";
+    devName = "Unknown";
+    devType = "Unknown";
+    fileSize = 0;
+}
 
-LibraryItem::LibraryItem(string n, string rel, string dev, bool type, double size){
+LibraryItem::LibraryItem(string n, string rel, string dev, string type, double size){
     name = n;
     releaseDate = rel;
     devName = dev;
@@ -10,40 +16,40 @@ LibraryItem::LibraryItem(string n, string rel, string dev, bool type, double siz
     fileSize = size;
 }
 
-void LibraryItem::setName(string){
-    name = "Unknown \n";
+void LibraryItem::setName(string n){
+    name = n;
 }
 
 string LibraryItem::getName(){
     return name;
 }
 
-void LibraryItem::setReleaseDate(string){
-    releaseDate = "Unknown \n";
+void LibraryItem::setReleaseDate(string rel){
+    releaseDate = rel;
 }
 
 string LibraryItem::getReleaseDate(){
     return releaseDate;
 }
 
-void LibraryItem::setDevName(string){
-    devName = "Unknown \n";
+void LibraryItem::setDevName(string dev){
+    devName = dev;
 }
 
 string LibraryItem::getDevName(){
     return devName;
 }
 
-void LibraryItem::setDeveloperType(bool){
-    devType = "Unknown \n";
+void LibraryItem::setDeveloperType(string type){
+    devType = type;
 }
 
-bool LibraryItem::getDeveloperType(){
+string LibraryItem::getDeveloperType(){
     return devType;
 }
 
-void LibraryItem::setFileSize(double){
-    fileSize = 0;
+void LibraryItem::setFileSize(double size){
+    fileSize = size;
 }
 
 double LibraryItem::getFileSize(){
@@ -51,13 +57,14 @@ double LibraryItem::getFileSize(){
 }
 
 void LibraryItem::displayInfo()const{
-    cout << "Game Name: \n" << name << "Release Date: \n" << releaseDate << "Developer: \n" << devName << "Game Type: \n" << devType << "\nGame Size: \n" << fileSize << endl;
-
-    for (int i = 0; i < MAX_SIZE; i++){
-        cout << MAX_GAMES[i] << endl;
+        cout << "\nGame Name: " << name << 
+        "\nRelease Date: " << releaseDate << 
+        "\nDeveloper:" << devName << 
+        "\nGame Type: " << devType << 
+        "\nGame Size: " << fileSize 
+        << endl;
     }
-}
 
 LibraryItem::~LibraryItem(){
-    cout << " Destoryed in the destructor! \n" << endl;
+    cout << "Destoryed in the destructor! \n" << endl;
 }

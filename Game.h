@@ -15,14 +15,14 @@ class Game : public LibraryItem // Declare Game as a child class of LibraryItem
 
     // Constructors
     Game();
-    Game(string n, string rel, string dev, bool type, double size, float p);
+    Game(string n, string rel, string dev, string type, double size, float p);
 
     // Setter and Getter functions
     void setPrice(float);
 
     float getPrice();
     bool checkFree();
-    void displayDetails(); // Overriding abstract function from parent class
+    void displayInfo(); // Overriding abstract function from parent class
     protected:
 
 };

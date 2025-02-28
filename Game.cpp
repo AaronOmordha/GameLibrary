@@ -5,13 +5,11 @@ using namespace std;
 
 
 // Constructors
-Game::Game() : LibraryItem()
-{
+Game::Game() : LibraryItem(){
     price = 0;
 }
 
-Game::Game(string n, string rel, string dev, bool type, double size, float p) : LibraryItem(n, rel, dev, type, size)
-{
+Game::Game(string n, string rel, string dev, string type, double size, float p) : LibraryItem(n, rel, dev, type, size){
     price = p;
     if (price == 0) // If price is 0, game is marked as free
     {
@@ -19,12 +17,9 @@ Game::Game(string n, string rel, string dev, bool type, double size, float p) : 
     }
 }
 
-
 // Functions
-
-            // Setters
-void Game::setPrice(float p)
-{
+// Setters
+void Game::setPrice(float p){
     if (p < 0)
     {
         cout << "Price cannot be negative" << endl;
@@ -35,12 +30,10 @@ void Game::setPrice(float p)
 }
 
             // Getters
-float Game::getPrice()
-{
+float Game::getPrice(){
     return price;
 }
 
-bool Game::checkFree()
-{
+bool Game::checkFree(){
     return free;
 }
