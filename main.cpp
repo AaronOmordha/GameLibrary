@@ -11,9 +11,9 @@ int main(){
 
     Game item1;
 
-    item1.setName("Gerry's_Adventure");
-    item1.setDevName("Gerry_Heapes");
-    item1.setReleaseDate("August_21st_1984");
+    item1.setName("Gerry's Adventure");
+    item1.setDevName("Gerry Heapes");
+    item1.setReleaseDate("August 21st 1984");
     item1.setDeveloperType("Triple A");
     item1.setFileSize(1000);
 
