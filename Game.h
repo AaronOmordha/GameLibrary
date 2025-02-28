@@ -16,7 +16,7 @@ class Game : public LibraryItem // Declare Game as a child class of LibraryItem
 
     // Constructors
     Game();
-    Game(string n, string rel, string dev, string type, double size, float p);
+    Game(const string& n, const string& rel, const string& dev, const string& type, double size, float p);
 
     // Setter and Getter functions
     void setPrice(float);

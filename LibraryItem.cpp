@@ -21,42 +21,42 @@ LibraryItem::LibraryItem(const string& n, const string& rel, const string& dev, 
     fileSize = size;
 }
 
-void LibraryItem::setName(string n)
+void LibraryItem::setName(const string& n)
 {
     name = n;
 }
 
-string LibraryItem::getName()
+const string& LibraryItem::getName()
 {
     return name;
 }
 
-void LibraryItem::setReleaseDate(string rel)
+void LibraryItem::setReleaseDate(const string& rel)
 {
     releaseDate = rel;
 }
 
-string LibraryItem::getReleaseDate()
+const string& LibraryItem::getReleaseDate()
 {
     return releaseDate;
 }
 
-void LibraryItem::setDevName(string dev)
+void LibraryItem::setDevName(const string& dev)
 {
     devName = dev;
 }
 
-string LibraryItem::getDevName()
+const string& LibraryItem::getDevName()
 {
     return devName;
 }
 
-void LibraryItem::setDeveloperType(string type)
+void LibraryItem::setDeveloperType(const string& type)
 {
     devType = type;
 }
 
-string LibraryItem::getDeveloperType()
+const string& LibraryItem::getDeveloperType()
 {
     return devType;
 }

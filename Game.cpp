@@ -8,7 +8,7 @@ Game::Game() : LibraryItem(){
     price = 0.0;
 }
 
-Game::Game(string n, string rel, string dev, string type, double size, float p) : LibraryItem(n, rel, dev, type, size){
+Game::Game(const string& n, const string& rel, const string& dev, const string& type, double size, float p) : LibraryItem(n, rel, dev, type, size){
     price = p;
     if (price == 0){ // If price is 0, game is marked as free
         free = true;

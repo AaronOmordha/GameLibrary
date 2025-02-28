@@ -20,20 +20,20 @@ class LibraryItem{
 
     public:
         LibraryItem();
-        LibraryItem(const string& n, const string& rel, const string& dev, const string& type, double size);
+        LibraryItem(const string&, const string&, const string&, const string&, double size);
         virtual ~LibraryItem();
 
-        void setName(string);
-        string getName();
+        void setName(const string&);
+        const string& getName();
 
-        void setReleaseDate(string);
-        string getReleaseDate();
+        void setReleaseDate(const string&);
+        const string& getReleaseDate();
 
-        void setDevName(string);
-        string getDevName();
+        void setDevName(const string&);
+        const string& getDevName();
 
-        void setDeveloperType(string);
-        string getDeveloperType();
+        void setDeveloperType(const string&);
+        const string& getDeveloperType();
 
         void setFileSize(double);
         double getFileSize();
