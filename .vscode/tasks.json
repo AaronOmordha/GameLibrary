@@ -11,6 +11,8 @@
                 "${workspaceFolder}\\LibraryItem.cpp",
                 "${workspaceFolder}\\Game.cpp",
                 "${workspaceFolder}\\Application.cpp",
+                "${workspaceFolder}\\Library.cpp",
+                "${workspaceFolder}\\Developer.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
