@@ -4,47 +4,77 @@
 using namespace std;
 
 // Constructors
-Game::Game() : LibraryItem(){
+Game::Game() 
+: LibraryItem() // Call parent class constructor
+{
     price = 0.0;
+    free = true;
 }
 
-Game::Game(const string& n, const string& rel, const string& dev, const string& type, double size, float p) : LibraryItem(n, rel, dev, type, size){
+Game::Game(const string& n, const string& rel, const string& dev, const string& type, const string& location, double size, float p)
+: LibraryItem(n, rel, dev, type, location, size) // Call parent class constructor
+{
     price = p;
-    if (price == 0){ // If price is 0, game is marked as free
+    if (price == 0)
+    { // If price is 0, game is marked as free
         free = true;
-    }else{
+    }
+    else
+    {
         free = false;
     }
 }
 
-void Game::setPrice(float p){
-    if (p < 0){
+
+// Setter Functions
+
+void Game::setPrice(float p)
+{
+    if (p < 0)
+    {
         cout << "Price cannot be negative!" << endl;
     }
-    else if (p == 0)
-    free = true;
-    price = p;
+    else
+    {
+        price = p;
+            if (price == 0)
+            {
+                free = true;
+            }
+            else
+            {
+                free = false;
+            }
+    }
 }
 
-float Game::getPrice(){
+
+// Getter Functions
+
+
+float Game::getPrice()
+{
     return price;
 }
 
-bool Game::checkFree(){
+bool Game::checkFree()
+{
     return free;
 }
 
-void Game::displayInfo(){
+
+// Other Functons
+
+// Overriding abstract "displayInfo" function from parent class
+void Game::displayInfo()
+{
     LibraryItem::displayInfo();
-    /*cout << "\nGame Name: " << getName() << endl;
-    cout << "Release Date: " << getReleaseDate() << endl;
-    cout << "Developer Name: " << getDevName() << endl;
-    cout << "Developer Type: " << getDeveloperType() << endl;
-    cout << "File Size: " << getFileSize() << "MB" << endl;*/
-    cout << "Price: $" << getPrice() << endl;
-    if (checkFree()){
+    if (checkFree())
+    {
         cout << "This game is free!" << endl;
-    }else{
-        cout << "This game is not free!" << endl;
+    }
+    else
+    {
+        cout << "Price: $" << getPrice() << endl;
     }
 }

@@ -1,26 +1,28 @@
 #ifndef Application_H
 #define Application_H
 
+#include "LibraryItem.h"
 #include <iostream>
 #include <string>
 using namespace std;
 
-class Application{
+class Application : public LibraryItem  // Declare Game as a child class of LibraryItem
+{
     private:
-    string appName;
-    double gameNum;
+    float subscriptionPrice;
+    bool free;
 
     public:
     Application();
-    Application(const string& n, const string& rel, const string& dev, const string& type, double size, float p, const string& aN, double gN);
+    Application(const string& n, const string& rel, const string& dev, const string& type, const string& location, double size, float subPrice);
 
-    void setAppName(const string&);
-    string getAppName();#
+    // Setter and Getter functions
+    void setSubscriptionPrice(float);
 
-    void setGameNum(double);
-    double getGameNum();
+    float getSubscriptionPrice();
+    bool checkFree();
+    void displayInfo() override; // Overriding abstract function from parent class
 
-    void displayInfo() override;
 
     protected:
 

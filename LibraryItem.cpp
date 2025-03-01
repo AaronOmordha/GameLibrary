@@ -3,32 +3,35 @@
 #include <string>   
 using namespace std;
 
+
+// Constructors
+
 LibraryItem::LibraryItem()
 {
     name = "Unknown";
     releaseDate = "Unknown";
     devName = "Unknown";
     devType = "Unknown";
+    fileLocation = "Unknown";
     fileSize = 0.0;
 }
 
-LibraryItem::LibraryItem(const string& n, const string& rel, const string& dev, const string& type, double size)
+LibraryItem::LibraryItem(const string& n, const string& rel, const string& dev, const string& type, const string& location, double size)
 {
     name = n;
     releaseDate = rel;
     devName = dev;
     devType = type;
+    fileLocation = location;
     fileSize = size;
 }
+
+
+// Setter Functions
 
 void LibraryItem::setName(const string& n)
 {
     name = n;
-}
-
-const string& LibraryItem::getName()
-{
-    return name;
 }
 
 void LibraryItem::setReleaseDate(const string& rel)
@@ -36,19 +39,9 @@ void LibraryItem::setReleaseDate(const string& rel)
     releaseDate = rel;
 }
 
-const string& LibraryItem::getReleaseDate()
-{
-    return releaseDate;
-}
-
 void LibraryItem::setDevName(const string& dev)
 {
     devName = dev;
-}
-
-const string& LibraryItem::getDevName()
-{
-    return devName;
 }
 
 void LibraryItem::setDeveloperType(const string& type)
@@ -56,9 +49,9 @@ void LibraryItem::setDeveloperType(const string& type)
     devType = type;
 }
 
-const string& LibraryItem::getDeveloperType()
+void LibraryItem::setFileLocation(const string& location)
 {
-    return devType;
+    fileLocation = location;
 }
 
 void LibraryItem::setFileSize(double size)
@@ -66,22 +59,57 @@ void LibraryItem::setFileSize(double size)
     fileSize = size;
 }
 
+
+// Getter Functions
+
+const string& LibraryItem::getName()
+{
+    return name;
+}
+
+const string& LibraryItem::getReleaseDate()
+{
+    return releaseDate;
+}
+
+const string& LibraryItem::getDevName()
+{
+    return devName;
+}
+
+const string& LibraryItem::getDeveloperType()
+{
+    return devType;
+}
+
+const string& LibraryItem::getFileLocation()
+{
+    return fileLocation;
+}
+
 double LibraryItem::getFileSize()
 {
     return fileSize;
 }
 
+
+// Display Function
+
 void LibraryItem::displayInfo()
 {
         cout << "\nName: " << getName() << 
         "\nRelease Date: " << getReleaseDate() << 
-        "\nDeveloper:" << getDevName() << 
+        "\nDeveloper: " << getDevName() << 
         "\nDeveloper Type: " << getDeveloperType() << 
-        "\nFile Size: " << getFileSize() 
+        "\nFile Size: " << getFileSize() << "KB" <<
+        "\nFile Location: " << getFileLocation()
         << endl;
     }
 
+
+// Destructor
+
 LibraryItem::~LibraryItem()
 {
-    cout << "Destroyed in the destructor! \n";
+    cout << getName() << " Destroyed in the destructor!" << endl;
 }

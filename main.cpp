@@ -16,8 +16,13 @@ int main(){
     item1.setReleaseDate("August 21st 1984");
     item1.setDeveloperType("Triple A");
     item1.setFileSize(1000);
+    item1.setFileLocation("C:\\Program_Files\\Gerry's_Adventure");
+    item1.setPrice(79.99);
 
     item1.displayInfo();
+    // to keep console open...
+    cout << "Application finished, press enter to close...";
+    cin.get();
 
     return 0;
 }
