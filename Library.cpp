@@ -27,7 +27,7 @@ const string& Library::getLibraryName(){
 void Library::addItem(LibraryItem* item){
     if(items.size() < MAX_SIZE){
         items.push_back(item);
-        cout << "Added: " << item->getName() << "\nto library: " << libraryName << endl;
+        cout << "Added: " << item->getName() << "\nInto Library: " << libraryName << endl;
     } else {
         cout << "Library is full, cannot add more items!" << endl;
     }

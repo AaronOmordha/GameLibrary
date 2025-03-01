@@ -2,6 +2,7 @@
 #include "LibraryItem.h"
 #include "Game.h"
 #include "Application.h"
+#include "Developer.h"
 
 using namespace std;
 
@@ -9,6 +10,8 @@ using namespace std;
 #include <string>
 
 int main(){
+
+    Developer dev1("Gerry Heapes", "Triple A");
 
     Library library1;
     library1.setLibraryName("Gerry's Library");
@@ -25,8 +28,12 @@ int main(){
     library1.addItem(item1);
     library1.displayItems();
 
+    dev1.addItem(item1);
+
+    dev1.displayDeveloperInfo();
+
     // to keep console open...
-    cout << "Application finished, press enter to close...";
+    cout << "\nApplication finished, press enter to close...";
     cin.get();
 
     return 0;

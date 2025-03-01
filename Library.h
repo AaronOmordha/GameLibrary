@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class Library {
+class Library{
 
     private:
     string libraryName; 
