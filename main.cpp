@@ -1,3 +1,4 @@
+#include "Library.h"
 #include "LibraryItem.h"
 #include "Game.h"
 #include "Application.h"
@@ -8,6 +9,7 @@ using namespace std;
 #include <string>
 
 int main(){
+
 
     Game item1;
 
@@ -20,6 +22,12 @@ int main(){
     item1.setPrice(79.99);
 
     item1.displayInfo();
+
+    //Library library1;
+    //library1.setLibraryName("Gerry's Library");
+    //library1.addItem(item1);
+
+
     // to keep console open...
     cout << "Application finished, press enter to close...";
     cin.get();
