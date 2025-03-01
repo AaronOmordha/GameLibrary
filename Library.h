@@ -11,25 +11,23 @@
 
 using namespace std;
 
-class Library 
-{
-    private: //data member variables declared here
-    string libraryName; //name of the library
-    vector<LibraryItem> items; //reference to a vector of LibraryItem objects
-    const int MAX_SIZE = 5; //maximum size of the vector
+class Library {
 
+    private:
+    string libraryName; 
+    vector<LibraryItem*> items; 
+    const int MAX_SIZE = 5;
 
-    public: //function prototypes declared here
-    Library(); //default constructor
-    Library(const string& n); //constructor with a string parameter
-    ~Library(); //destructor
+    public: 
+    Library(); 
+    Library(const string& n); 
+    ~Library(); 
 
-    void setLibraryName(const string& n); //function to set the name of the library
-    const string& getLibraryName(); //function to get the name of the library
+    void setLibraryName(const string& n); 
+    const string& getLibraryName(); 
+    void addItem(LibraryItem* item);
+    void displayItems();
 
-    void addItem(const LibraryItem& item); //function to add a LibraryItem object to the vector
-    //void removeItem(const LibraryItem& item); //function to remove a LibraryItem object from the vector
-    //void displayItems(); //function to display all LibraryItem objects in the vector
 };
 
 #endif

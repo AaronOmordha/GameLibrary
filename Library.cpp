@@ -8,45 +8,47 @@
 
 using namespace std;
 
-Library::Library()
-{
-    libraryName = "Unknown";
+Library::Library(){
+    libraryName = "Unknown Library";
 }
 
-Library::Library(const string& n)
-{
+Library::Library(const string& n){
     libraryName = n;
 }  
 
-Library::~Library()
-{
-    cout << "Library " << libraryName << " is being destroyed." << endl;
-}
-
-void Library::setLibraryName(const string& n)
-{
+void Library::setLibraryName(const string& n){
     libraryName = n;
 }
 
-const string& Library::getLibraryName()
-{
+const string& Library::getLibraryName(){
     return libraryName;
 }
 
-void Library::addItem(const LibraryItem& item)
-{
-    items.push_back(item);
-}
-
-/*void Library::removeItem(const LibraryItem& item)
-{
-    for (int i = 0; i < items.size(); i++)
-    {
-        if (items[i].getName() == item.getName())
-        {
-            items.erase(items.begin() + i);
-            break;
-        }
+void Library::addItem(LibraryItem* item){
+    if(items.size() < MAX_SIZE){
+        items.push_back(item);
+        cout << "Added: " << item->getName() << "\nto library: " << libraryName << endl;
+    } else {
+        cout << "Library is full, cannot add more items!" << endl;
     }
 }
-    */
+
+void Library::displayItems(){
+    if(items.empty()){
+        cout << "Library is empty!" << endl;
+        return;
+    }
+
+    cout << "\nLibrary: " << libraryName << endl;
+    for(LibraryItem* item : items){
+        item->displayInfo();
+    }
+}
+
+Library::~Library(){
+    cout << "Destroying Library: " << libraryName << endl;
+    for(LibraryItem* item : items){
+        delete item;
+    }
+    items.clear();
+}
