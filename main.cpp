@@ -30,7 +30,7 @@ int main(){
     item2->setName("Terraria");
     item2->setDevName("Maskymillian Borowski");
     item2->setReleaseDate("May 16th 2011");
-    item2->setDeveloperType("Indie");
+    item2->setDeveloperType(dev2.getDeveloperType());
     item2->setFileSize(200);
     item2->setFileLocation("C:\\Program_Files\\Terraria");
     item2->setPrice(0.0);
