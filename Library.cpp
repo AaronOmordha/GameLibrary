@@ -41,12 +41,12 @@ void Library::displayItems(){   //Display items in library
 
     cout << "\nLibrary: " << libraryName << endl;
 
-    cout << "\nGame in Library: " << endl;
+    cout << "\nGames and applications in Library: " << endl;
     for(LibraryItem* item : items){
         cout << item->getName() << endl;
     }
 
-    cout << "\nGame Details: " << endl;
+    cout << "\nDetails: " << endl;
     for(LibraryItem* item : items){
         item->displayInfo();
     }

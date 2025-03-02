@@ -22,6 +22,7 @@ int main(){
     Developer dev1("id Software", "Triple A");      //Developer Setup
     Developer dev2("Re-Logic", "Indie");
     Developer dev3("Mojang", "Indie");
+    Developer dev4("Adobe", "Triple A");
 
     Library library1;
     library1.setLibraryName("Paul's Library");      //Library Setup
@@ -33,6 +34,9 @@ int main(){
     Game* item2 = new Game();
     Game* item3 = new Game();
     Game* item4 = new Game();
+                                                    
+
+    Application* item5 = new Application();         //Application Setup using pointers
 
     item1->setName("Doom");                         //Game Details
     item1->setDevName("id Software");
@@ -66,9 +70,17 @@ int main(){
     item4->setFileLocation("C:\\Program_Files\\Wolfenstien");
     item4->setPrice(79.99);
 
+    item5->setName("Photoshop");                    //Application Details
+    item5->setDevName("Adobe");
+    item5->setReleaseDate("June 1st 1984");
+    item5->setDeveloperType("Triple A");
+    item5->setFileSize(1000);
+    item5->setFileLocation("C:\\Program_Files\\Photoshop");
+    item5->setSubscriptionPrice(9.99, "Monthly");
+
     library1.addItem(item1);                        //Adding Games to Libraries
     library1.addItem(item2);
-    //library1.addItem(item4);
+    library1.addItem(item5);
 
     library2.addItem(item3);
     library2.addItem(item2);
@@ -76,14 +88,16 @@ int main(){
     library1.displayItems();                        //Displaying Libraries
     library2.displayItems();
 
-    dev1.addItem(item1);                            //Adding Games to Developers
+    dev1.addItem(item1);                            //Attributing Games/Applications to Developers
     dev1.addItem(item4);
     dev2.addItem(item2);
     dev3.addItem(item3);
+    dev4.addItem(item5);
 
     dev1.displayDeveloperInfo();                    //Displaying Developers
     dev2.displayDeveloperInfo();
     dev3.displayDeveloperInfo();
+    dev4.displayDeveloperInfo();
 
     // to keep console open...
     cout << "\nApplication finished, press enter to close...";

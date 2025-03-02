@@ -58,10 +58,11 @@ bool Game::checkFree(){
 // Overriding abstract "displayInfo" function from parent class
 void Game::displayInfo(){
     LibraryItem::displayInfo();
+    cout << "Item type: Game" << endl;
     if (checkFree()){
         cout << "This game is free!" << endl;
     }
     else{
-        cout << "Price: €" << getPrice() << endl;
+        cout << "Price: $" << getPrice() << endl;
     }
 }

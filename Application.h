@@ -10,16 +10,18 @@ class Application : public LibraryItem{  // Declare Game as a child class of Lib
 
     private:
     float subscriptionPrice;
+    string subscriptionFrequency;
     bool free;
 
     public:
     Application();
-    Application(const string& n, const string& rel, const string& dev, const string& type, const string& location, double size, float subPrice);
+    Application(const string& n, const string& rel, const string& dev, const string& type, const string& location, double size, float subPrice, const string& subFreq);
 
     // Setter and Getter functions
-    void setSubscriptionPrice(float);
+    void setSubscriptionPrice(float subPrice, const string& subFreq);
 
     float getSubscriptionPrice();
+    string getSubscriptionFrequency();
     bool checkFree();
     void displayInfo() override; // Overriding abstract function from parent class
 
