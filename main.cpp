@@ -1,3 +1,11 @@
+//Created by:    Aaron Moore        C23339461
+//              Éanna O'Connell     C23494414
+//
+//  This is the main file for the project. 
+//  It creates libraries and developers, then creates games and adds them to the library and developers. 
+//  It then displays the library, developer and game info.
+// 
+
 #include "Library.h"
 #include "LibraryItem.h"
 #include "Game.h"
@@ -12,7 +20,7 @@ using namespace std;
 int main(){
 
     Developer dev1("id Software", "Triple A");      //Developer Setup
-    Developer dev2("Re-Logic", "Triple A");
+    Developer dev2("Re-Logic", "Indie");
     Developer dev3("Mojang", "Indie");
 
     Library library1;
@@ -24,6 +32,7 @@ int main(){
     Game* item1 = new Game();                       //Game Setup using pointers
     Game* item2 = new Game();
     Game* item3 = new Game();
+    Game* item4 = new Game();
 
     item1->setName("Doom");                         //Game Details
     item1->setDevName("id Software");
@@ -49,20 +58,30 @@ int main(){
     item3->setFileLocation("C:\\Program_Files\\Minecraft");
     item3->setPrice(12.99);
 
-    library1.addItem(item1);                    //Adding Games to Libraries
+    item4->setName("Wolfenstien");
+    item4->setDevName("id Software");
+    item4->setReleaseDate("May 5th 1984");
+    item4->setDeveloperType("Triple A");
+    item4->setFileSize(100);
+    item4->setFileLocation("C:\\Program_Files\\Wolfenstien");
+    item4->setPrice(79.99);
+
+    library1.addItem(item1);                        //Adding Games to Libraries
     library1.addItem(item2);
+    //library1.addItem(item4);
 
     library2.addItem(item3);
     library2.addItem(item2);
 
-    library1.displayItems();                    //Displaying Libraries
+    library1.displayItems();                        //Displaying Libraries
     library2.displayItems();
 
-    dev1.addItem(item1);                        //Adding Games to Developers
+    dev1.addItem(item1);                            //Adding Games to Developers
+    dev1.addItem(item4);
     dev2.addItem(item2);
     dev3.addItem(item3);
 
-    dev1.displayDeveloperInfo();                //Displaying Developers
+    dev1.displayDeveloperInfo();                    //Displaying Developers
     dev2.displayDeveloperInfo();
     dev3.displayDeveloperInfo();
 
