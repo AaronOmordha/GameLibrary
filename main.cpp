@@ -17,8 +17,13 @@ int main(){
     Library library1;
     library1.setLibraryName("Gerry's Library");
 
+    Library library2;
+    library2.setLibraryName("Maksymillian's Library");
+
     Game* item1 = new Game();
     Game* item2 = new Game();
+    Game* item3 = new Game();
+
     item1->setName("Gerry's Adventure");
     item1->setDevName("Gerry Heapes");
     item1->setReleaseDate("August 21st 1984");
@@ -35,12 +40,25 @@ int main(){
     item2->setFileLocation("C:\\Program_Files\\Terraria");
     item2->setPrice(0.0);
 
+    item3->setName("Minecraft");
+    item3->setDevName("Gerry Heapes");
+    item3->setReleaseDate("May 17th 2009");
+    item3->setDeveloperType("Triple A");
+    item3->setFileSize(20);
+    item3->setFileLocation("C:\\Program_Files\\Gerry's_Adventure");
+    item3->setPrice(12.99);
+
     library1.addItem(item1);
     library1.addItem(item2);
 
+    library2.addItem(item3);
+    library2.addItem(item2);
+
     library1.displayItems();
+    library2.displayItems();
 
     dev1.addItem(item1);
+    dev1.addItem(item3);
     dev2.addItem(item2);
 
     dev1.displayDeveloperInfo();

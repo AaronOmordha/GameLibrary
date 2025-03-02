@@ -40,7 +40,7 @@ void Developer::displayDeveloperInfo()const{
         return;
     }else{
         for(LibraryItem* item : createdItems){
-            item->displayInfo();
+            cout << item->getName() << endl;
         }
     }
 }
