@@ -1,10 +1,7 @@
 #include "Library.h"
 #include <iostream>
 #include <string>
-#include <vector>
-#include "LibraryItem.h"
-#include "Game.h"
-#include "Application.h"    
+#include <vector>  
 
 using namespace std;
 
