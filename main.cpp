@@ -11,21 +11,21 @@ using namespace std;
 
 int main(){
 
-    Developer dev1("id Software", "Triple A");
+    Developer dev1("id Software", "Triple A");      //Developer Setup
     Developer dev2("Re-Logic", "Triple A");
     Developer dev3("Mojang", "Indie");
 
     Library library1;
-    library1.setLibraryName("Paul's Library");
+    library1.setLibraryName("Paul's Library");      //Library Setup
 
     Library library2;
     library2.setLibraryName("Dave's Library");
 
-    Game* item1 = new Game();
+    Game* item1 = new Game();                       //Game Setup using pointers
     Game* item2 = new Game();
     Game* item3 = new Game();
 
-    item1->setName("Doom");
+    item1->setName("Doom");                         //Game Details
     item1->setDevName("id Software");
     item1->setReleaseDate("August 21st 1984");
     item1->setDeveloperType("Triple A");
@@ -49,20 +49,20 @@ int main(){
     item3->setFileLocation("C:\\Program_Files\\Minecraft");
     item3->setPrice(12.99);
 
-    library1.addItem(item1);
+    library1.addItem(item1);                    //Adding Games to Libraries
     library1.addItem(item2);
 
     library2.addItem(item3);
     library2.addItem(item2);
 
-    library1.displayItems();
+    library1.displayItems();                    //Displaying Libraries
     library2.displayItems();
 
-    dev1.addItem(item1);
+    dev1.addItem(item1);                        //Adding Games to Developers
     dev2.addItem(item2);
     dev3.addItem(item3);
 
-    dev1.displayDeveloperInfo();
+    dev1.displayDeveloperInfo();                //Displaying Developers
     dev2.displayDeveloperInfo();
     dev3.displayDeveloperInfo();
 

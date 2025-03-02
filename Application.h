@@ -6,8 +6,8 @@
 #include <string>
 using namespace std;
 
-class Application : public LibraryItem  // Declare Game as a child class of LibraryItem
-{
+class Application : public LibraryItem{  // Declare Game as a child class of LibraryItem
+
     private:
     float subscriptionPrice;
     bool free;

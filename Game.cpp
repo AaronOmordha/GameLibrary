@@ -5,22 +5,18 @@ using namespace std;
 
 // Constructors
 Game::Game() 
-: LibraryItem() // Call parent class constructor
-{
+: LibraryItem(){ // Call parent class constructor
     price = 0.0;
     free = true;
 }
 
 Game::Game(const string& n, const string& rel, const string& dev, const string& type, const string& location, double size, float p)
-: LibraryItem(n, rel, dev, type, location, size) // Call parent class constructor
-{
+: LibraryItem(n, rel, dev, type, location, size){ // Call parent class constructor
     price = p;
-    if (price == 0)
-    { // If price is 0, game is marked as free
+    if (price == 0){ // If price is 0, game is marked as free
         free = true;
     }
-    else
-    {
+    else{
         free = false;
     }
 }
@@ -28,21 +24,17 @@ Game::Game(const string& n, const string& rel, const string& dev, const string& 
 
 // Setter Functions
 
-void Game::setPrice(float p)
-{
-    if (p < 0)
-    {
+void Game::setPrice(float p){
+    if (p < 0){
         cout << "Price cannot be negative!" << endl;
     }
     else
     {
         price = p;
-            if (price == 0)
-            {
+            if (price == 0){
                 free = true;
             }
-            else
-            {
+            else{
                 free = false;
             }
     }
@@ -52,13 +44,11 @@ void Game::setPrice(float p)
 // Getter Functions
 
 
-float Game::getPrice()
-{
+float Game::getPrice(){
     return price;
 }
 
-bool Game::checkFree()
-{
+bool Game::checkFree(){
     return free;
 }
 
@@ -66,15 +56,12 @@ bool Game::checkFree()
 // Other Functons
 
 // Overriding abstract "displayInfo" function from parent class
-void Game::displayInfo()
-{
+void Game::displayInfo(){
     LibraryItem::displayInfo();
-    if (checkFree())
-    {
+    if (checkFree()){
         cout << "This game is free!" << endl;
     }
-    else
-    {
+    else{
         cout << "Price: €" << getPrice() << endl;
     }
 }

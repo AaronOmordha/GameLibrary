@@ -8,23 +8,23 @@
 
 using namespace std;
 
-Library::Library(){
+Library::Library(){                 //Constructor
     libraryName = "Unknown Library";
 }
 
-Library::Library(const string& n){
+Library::Library(const string& n){  //Constructor
     libraryName = n;
 }  
 
-void Library::setLibraryName(const string& n){
+void Library::setLibraryName(const string& n){  //Setter
     libraryName = n;
 }
 
-const string& Library::getLibraryName(){
+const string& Library::getLibraryName(){    //Getter
     return libraryName;
 }
 
-void Library::addItem(LibraryItem* item){
+void Library::addItem(LibraryItem* item){   //Add item to library
     if(items.size() < MAX_SIZE){
         items.push_back(item);
         cout << "Added: " << item->getName() << "\nInto Library: " << libraryName << endl;
@@ -33,7 +33,7 @@ void Library::addItem(LibraryItem* item){
     }
 }
 
-void Library::displayItems(){
+void Library::displayItems(){   //Display items in library
     if(items.empty()){
         cout << "Library is empty!" << endl;
         return;
@@ -52,7 +52,7 @@ void Library::displayItems(){
     }
 }
 
-Library::~Library(){
+Library::~Library(){    //Destructor
     cout << "Destroying Library: " << libraryName << endl;
     for(LibraryItem* item : items){
         delete item;

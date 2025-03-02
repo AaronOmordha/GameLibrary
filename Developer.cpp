@@ -1,36 +1,36 @@
 #include "Developer.h"
 
-Developer::Developer(){
+Developer::Developer(){     //Constructor
     name = "Unknown";
     developerType = "Unknown";
 }
 
-Developer::Developer(const string& devName, const string& devType){
+Developer::Developer(const string& devName, const string& devType){   //Constructor
     name = devName;
     developerType = devType;
 }
 
-void Developer::setName(const string& devName){
+void Developer::setName(const string& devName){     //Setter
     name = devName;
 }
 
-void Developer::setDeveloperType(const string& devType){
+void Developer::setDeveloperType(const string& devType){        //Setter
     developerType = devType;
 }
 
-const string& Developer::getName()const{
+const string& Developer::getName()const{    //Getter
     return name;
 }
 
-const string& Developer::getDeveloperType()const{
+const string& Developer::getDeveloperType()const{   //Getter
     return developerType;
 }
 
-void Developer::addItem(LibraryItem* item){
+void Developer::addItem(LibraryItem* item){   //Add item to developer
     createdItems.push_back(item);
 }
 
-void Developer::displayDeveloperInfo()const{
+void Developer::displayDeveloperInfo()const{    //Display developer info
     cout << "\nDeveloper: " << name << endl;
     cout << "\nDeveloper Type: " << developerType << endl;
     cout << "\nCreated Items: " << endl;
@@ -45,7 +45,7 @@ void Developer::displayDeveloperInfo()const{
     }
 }
 
-Developer::~Developer(){
+Developer::~Developer(){    //Destructor
     cout << "Destroying Developer: " << name << endl;
     for(LibraryItem* item : createdItems){
         delete item;
