@@ -75,6 +75,6 @@ void Game::displayInfo()
     }
     else
     {
-        cout << "Price: $" << getPrice() << endl;
+        cout << "Price: €" << getPrice() << endl;
     }
 }

@@ -85,7 +85,7 @@ void LibraryItem::displayInfo(){
     "\nRelease Date: " << getReleaseDate() << 
     "\nDeveloper: " << getDevName() << 
     "\nDeveloper Type: " << getDeveloperType() << 
-    "\nFile Size: " << getFileSize() << "GB" <<
+    "\nFile Size: " << getFileSize() << "MB" <<
     "\nFile Location: " << getFileLocation()
     << endl;
 }
