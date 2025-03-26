@@ -44,7 +44,7 @@ class LibraryItem{
 
         virtual void displayInfo();
 
-        //ASSIGNMENT 2 INSTALLATIONS
+        //-------------------ASSIGNMENT 2 INSTALLATIONS-------------------
         LibraryItem(const LibraryItem& other);
         LibraryItem& operator = (const LibraryItem& other);
 

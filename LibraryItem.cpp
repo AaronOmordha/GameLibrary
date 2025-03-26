@@ -23,7 +23,7 @@ LibraryItem::LibraryItem(const string& n, const string& rel, const string& dev, 
     fileSize = size;
 }
 
-// ASSIGNMENT 2 INSTALLATIONS
+// -------------------------ASSIGNMENT 2 INSTALLATIONS-------------------------
 LibraryItem::LibraryItem(const LibraryItem& other){
     name = other.name;
     releaseDate = other.releaseDate;

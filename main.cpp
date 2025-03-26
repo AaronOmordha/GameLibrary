@@ -98,7 +98,9 @@ int main(){
     dev3.displayDeveloperInfo();
     dev4.displayDeveloperInfo();
 
-    // ASSIGNMENT 2 INSTALLATIONS
+    /*--------------------------------------------- ASSIGNMENT 2 INSTALLATIONS ---------------------------------------------*/
+
+    try{
     Game copiedGame = *item1;                       //Testing Copy Constructor
     cout << "\nCopied Game: \n" << copiedGame;
     copiedGame.displayInfo();
@@ -122,6 +124,10 @@ int main(){
 
     if (*item1 > *item3){
         cout << item1->getName() << " is more expensive than " << item3->getName() << "\n";
+    }
+}
+    catch(const exception& e){
+        cout << e.what() << endl;
     }
 
     // to keep console open...

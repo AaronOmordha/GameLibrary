@@ -64,7 +64,7 @@ Developer::~Developer(){    //Destructor
     createdItems.clear();
 }
 
-// ASSIGNMENT 2 INSTALLATIONS
+// --------------------------ASSIGNMENT 2 INSTALLATIONS--------------------------
 Developer::Developer(const Developer& other){    //Copy Constructor
     name = other.name;
     developerType = other.developerType;

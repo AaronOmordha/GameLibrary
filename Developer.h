@@ -29,7 +29,7 @@ class Developer{
     void addItem(LibraryItem* item);
     void displayDeveloperInfo()const;
 
-    // ASSIGNMENT 2 INSTALLATIONS
+    // -----------------------ASSIGNMENT 2 INSTALLATIONS-----------------------
     Developer(const Developer& other);
     Developer& operator = (const Developer& other);
 

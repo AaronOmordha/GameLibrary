@@ -61,7 +61,7 @@ void Game::displayInfo(){
     }
 }
 
-// ASSIGNMENT 2 INSTALLATIONS
+// --------------------------ASSIGNMENT 2 INSTALLATIONS--------------------------
     Game::Game(const Game& other) : LibraryItem(other){
         price = other.price;
         free = other.free;
