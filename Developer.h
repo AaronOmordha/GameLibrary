@@ -28,6 +28,18 @@ class Developer{
     
     void addItem(LibraryItem* item);
     void displayDeveloperInfo()const;
+
+    // ASSIGNMENT 2 INSTALLATIONS
+    Developer(const Developer& other);
+    Developer& operator = (const Developer& other);
+
+    bool operator == (const Developer& other) const;
+    bool operator != (const Developer& other) const;
+    bool operator < (const Developer& other) const;
+    bool operator > (const Developer& other) const;
+
+    friend ostream& operator << (ostream& os, const Developer& dev);
+    friend istream& operator >> (istream& is, Developer& dev);
 };
 
 #endif

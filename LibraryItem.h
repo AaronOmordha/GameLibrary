@@ -44,6 +44,18 @@ class LibraryItem{
 
         virtual void displayInfo();
 
+        //ASSIGNMENT 2 INSTALLATIONS
+        LibraryItem(const LibraryItem& other);
+        LibraryItem& operator = (const LibraryItem& other);
+
+        bool operator == (const LibraryItem& other) const;
+        bool operator != (const LibraryItem& other) const;
+        bool operator < (const LibraryItem& other) const;
+        bool operator > (const LibraryItem& other) const;
+
+        friend ostream& operator << (ostream& os, const LibraryItem& item);
+        friend istream& operator >> (istream& is, LibraryItem& item);
+
     protected:
 
 };

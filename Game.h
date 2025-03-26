@@ -25,6 +25,19 @@ class Game : public LibraryItem{ // Declare Game as a child class of LibraryItem
     bool checkFree();
     void displayInfo() override; // Overriding abstract function from parent class
 
+    // ASSIGNMENT 2 INSTALLATIONS
+    Game(const Game& other);
+    Game& operator = (const Game& other);
+
+    bool operator == (const Game& other) const;
+    bool operator != (const Game& other) const;
+    bool operator < (const Game& other) const;
+    bool operator > (const Game& other) const;
+
+    friend ostream& operator << (ostream& os, const Game& item);
+    friend istream& operator >> (istream& is, Game& item);
+    // ASSIGNMENT 2 INSTALLATIONS
+
     protected:
 
 };

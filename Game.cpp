@@ -21,9 +21,7 @@ Game::Game(const string& n, const string& rel, const string& dev, const string& 
     }
 }
 
-
 // Setter Functions
-
 void Game::setPrice(float p){
     if (p < 0){
         cout << "Price cannot be negative!" << endl;
@@ -40,10 +38,7 @@ void Game::setPrice(float p){
     }
 }
 
-
 // Getter Functions
-
-
 float Game::getPrice(){
     return price;
 }
@@ -51,7 +46,6 @@ float Game::getPrice(){
 bool Game::checkFree(){
     return free;
 }
-
 
 // Other Functons
 
@@ -66,3 +60,47 @@ void Game::displayInfo(){
         cout << "Price: $" << getPrice() << endl;
     }
 }
+
+// ASSIGNMENT 2 INSTALLATIONS
+    Game::Game(const Game& other) : LibraryItem(other){
+        price = other.price;
+        free = other.free;
+    }
+
+    Game& Game::operator = (const Game& other){
+        if (this != &other){
+            LibraryItem::operator=(other);
+            price = other.price;
+            free = other.free;
+        }
+        return *this;
+    }
+
+    bool Game::operator == (const Game& other) const{
+        return (LibraryItem::operator==(other) && price == other.price);
+    }
+
+    bool Game::operator != (const Game& other) const{
+        return !(*this == other);
+    }
+
+    bool Game::operator < (const Game& other) const{
+        return price < other.price;
+    }
+
+    bool Game::operator > (const Game& other) const{
+        return price > other.price;
+    }
+
+    ostream& operator<<(ostream& os, const Game& g) {
+        os << static_cast<const LibraryItem&>(g) << "," << g.price;
+        return os;
+    }
+
+    istream& operator>>(istream& is, Game& g) {
+        is >> static_cast<LibraryItem&>(g);
+        is >> g.price;
+        g.free = (g.price == 0.0);
+        is.ignore();
+        return is;
+    }

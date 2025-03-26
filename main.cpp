@@ -33,8 +33,7 @@ int main(){
     Game* item1 = new Game();                       //Game Setup using pointers
     Game* item2 = new Game();
     Game* item3 = new Game();
-    Game* item4 = new Game();
-                                                    
+    Game* item4 = new Game();                                           
 
     Application* item5 = new Application();         //Application Setup using pointers
 
@@ -98,6 +97,32 @@ int main(){
     dev2.displayDeveloperInfo();
     dev3.displayDeveloperInfo();
     dev4.displayDeveloperInfo();
+
+    // ASSIGNMENT 2 INSTALLATIONS
+    Game copiedGame = *item1;                       //Testing Copy Constructor
+    cout << "\nCopied Game: \n" << copiedGame;
+    copiedGame.displayInfo();
+
+    Game assignedGame;                              //Testing Assignment Operator
+    assignedGame = *item3;
+    cout << "\nAssigned Game: \n" << assignedGame;
+    assignedGame.displayInfo();
+
+    if (*item1 == copiedGame){
+        cout << "\n" << item1->getName() << " and " << copiedGame.getName() << " are equal\n";
+    }
+
+    if (*item1 != *item3){
+        cout << item1->getName() << " and " << item3->getName() << " are different\n";
+    }
+
+    if (*item3 < *item1){
+        cout << item3->getName() << " is cheaper than " << item1->getName() << "\n";
+    }
+
+    if (*item1 > *item3){
+        cout << item1->getName() << " is more expensive than " << item3->getName() << "\n";
+    }
 
     // to keep console open...
     cout << "\nApplication finished, press enter to close...";

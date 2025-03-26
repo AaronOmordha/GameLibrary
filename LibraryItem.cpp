@@ -5,7 +5,6 @@ using namespace std;
 
 
 // Constructors
-
 LibraryItem::LibraryItem(){
     name = "Unknown";
     releaseDate = "Unknown";
@@ -24,8 +23,73 @@ LibraryItem::LibraryItem(const string& n, const string& rel, const string& dev, 
     fileSize = size;
 }
 
-// Setter Functions
+// ASSIGNMENT 2 INSTALLATIONS
+LibraryItem::LibraryItem(const LibraryItem& other){
+    name = other.name;
+    releaseDate = other.releaseDate;
+    devName = other.devName;
+    devType = other.devType;
+    fileLocation = other.fileLocation;
+    fileSize = other.fileSize;
+}
 
+LibraryItem& LibraryItem::operator = (const LibraryItem& other){
+    if(this != &other){
+        name = other.name;
+        releaseDate = other.releaseDate;
+        devName = other.devName;
+        devType = other.devType;
+        fileLocation = other.fileLocation;
+        fileSize = other.fileSize;
+    }
+    return *this;
+}
+
+bool LibraryItem::operator == (const LibraryItem& other) const{
+    return name == other.name;
+}
+
+bool LibraryItem::operator != (const LibraryItem& other) const{
+    return name != other.name;
+}
+
+bool LibraryItem::operator < (const LibraryItem& other) const{
+    return name < other.name;
+}
+
+bool LibraryItem::operator > (const LibraryItem& other) const{
+    return name > other.name;
+}
+
+ostream& operator << (ostream& os, const LibraryItem& item){
+    os << "Name: " << item.name << 
+    "\nRelease Date: " << item.releaseDate << 
+    "\nDeveloper: " << item.devName << 
+    "\nDeveloper Type: " << item.devType << 
+    "\nFile Size: " << item.fileSize << "MB" <<
+    "\nFile Location: " << item.fileLocation
+    << endl;
+    return os;
+}
+
+istream& operator >> (istream& is, LibraryItem& item){
+    cout << "Enter Name: ";
+    is >> item.name;
+    cout << "Enter Release Date: ";
+    is >> item.releaseDate;
+    cout << "Enter Developer: ";
+    is >> item.devName;
+    cout << "Enter Developer Type: ";
+    is >> item.devType;
+    cout << "Enter File Size: ";
+    is >> item.fileSize;
+    cout << "Enter File Location: ";
+    is >> item.fileLocation;
+    return is;
+}
+// ASSIGNMENT 2 INSTALLATIONS
+
+// Setter Functions
 void LibraryItem::setName(const string& n){
     name = n;
 }
@@ -52,7 +116,6 @@ void LibraryItem::setFileSize(double size){
 
 
 // Getter Functions
-
 const string& LibraryItem::getName(){
     return name;
 }
@@ -79,7 +142,6 @@ double LibraryItem::getFileSize(){
 
 
 // Display Function
-
 void LibraryItem::displayInfo(){
     cout << "\nName: " << getName() << 
     "\nRelease Date: " << getReleaseDate() << 
@@ -92,7 +154,6 @@ void LibraryItem::displayInfo(){
 
 
 // Destructor
-
 LibraryItem::~LibraryItem(){
     cout << getName() << " Destroyed in the destructor!" << endl;
 }
