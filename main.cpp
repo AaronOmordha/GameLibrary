@@ -101,34 +101,34 @@ int main(){
     /*--------------------------------------------- ASSIGNMENT 2 INSTALLATIONS ---------------------------------------------*/
 
     try{
-    Game copiedGame = *item1;                       //Testing Copy Constructor
-    cout << "\nCopied Game: \n" << copiedGame;
-    copiedGame.displayInfo();
+        Game copiedGame = *item1;                       //Testing Copy Constructor
+        cout << "\nCopied Game: \n" << copiedGame;
+        copiedGame.displayInfo();
 
-    Game assignedGame;                              //Testing Assignment Operator
-    assignedGame = *item3;
-    cout << "\nAssigned Game: \n" << assignedGame;
-    assignedGame.displayInfo();
+        Game assignedGame;                              //Testing Assignment Operator
+        assignedGame = *item3;
+        cout << "\nAssigned Game: \n" << assignedGame;
+        assignedGame.displayInfo();
 
-    if (*item1 == copiedGame){
-        cout << "\n" << item1->getName() << " and " << copiedGame.getName() << " are equal\n";
-    }
+        if (*item1 == copiedGame){
+            cout << "\n" << item1->getName() << " and " << copiedGame.getName() << " are equal\n";
+        }
 
-    if (*item1 != *item3){
-        cout << item1->getName() << " and " << item3->getName() << " are different\n";
-    }
+        if (*item1 != *item3){
+            cout << item1->getName() << " and " << item3->getName() << " are different\n";
+        }
 
-    if (*item3 < *item1){
-        cout << item3->getName() << " is cheaper than " << item1->getName() << "\n";
-    }
+        if (*item3 < *item1){
+            cout << item3->getName() << " is cheaper than " << item1->getName() << "\n";
+        }
 
-    if (*item1 > *item3){
-        cout << item1->getName() << " is more expensive than " << item3->getName() << "\n";
-    }
+        if (*item1 > *item3){
+            cout << item1->getName() << " is more expensive than " << item3->getName() << "\n";
+        }
 }
-    catch(const exception& e){
-        cout << e.what() << endl;
-    }
+        catch(const exception& e){
+            cout << e.what() << endl;
+        }
 
     // to keep console open...
     cout << "\nApplication finished, press enter to close...";
