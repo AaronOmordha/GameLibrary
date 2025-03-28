@@ -53,7 +53,7 @@ bool Game::checkFree(){
 void Game::displayInfo(){
     LibraryItem::displayInfo();
     cout << "Item type: Game" << endl;
-    if (checkFree()){
+    if (checkFree() == 1){
         cout << "This game is free!" << endl;
     }
     else{
@@ -93,7 +93,12 @@ void Game::displayInfo(){
     }
 
     ostream& operator<<(ostream& os, const Game& g) {
-        os << static_cast<const LibraryItem&>(g) << "," << g.price;
+        if (g.free == 1){
+            os << "This game is free!" << endl;
+        }
+        else{
+            os << static_cast<const LibraryItem&>(g) << "Price : $" << g.price << endl;
+        }
         return os;
     }
 

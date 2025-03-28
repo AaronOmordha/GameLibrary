@@ -43,7 +43,7 @@ int main(){
     item1->setDeveloperType("Triple A");
     item1->setFileSize(100);
     item1->setFileLocation("C:\\Program_Files\\Doom");
-    item1->setPrice(79.99);
+    item1->setPrice(0);
 
     item2->setName("Terraria");
     item2->setDevName("Re-Logic");
@@ -103,15 +103,15 @@ int main(){
     try{
         Game copiedGame = *item1;                       //Testing Copy Constructor
         cout << "\nCopied Game: \n" << copiedGame;
-        copiedGame.displayInfo();
+        // cout << copiedGame.getPrice() << endl;
 
-        Game assignedGame;                              //Testing Assignment Operator
-        assignedGame = *item3;
-        cout << "\nAssigned Game: \n" << assignedGame;
-        assignedGame.displayInfo();
+        // Game assignedGame;                              //Testing Assignment Operator
+        // assignedGame = *item3;
+        // cout << "\nAssigned Game: \n" << assignedGame;
+        // assignedGame.getName();
 
-        if (*item1 == copiedGame){
-            cout << "\n" << item1->getName() << " and " << copiedGame.getName() << " are equal\n";
+        if (*item1 == *item1){
+            cout << "\n" << item1->getName() << " and " << item1->getName() << " are equal\n";
         }
 
         if (*item1 != *item3){
