@@ -1,6 +1,7 @@
 #ifndef LIBRARY_H
 #define LIBRARY_H
 
+#include <memory>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -15,7 +16,7 @@ class Library{
 
     private:
     string libraryName; 
-    vector<LibraryItem*> items; 
+    vector< shared_ptr<LibraryItem> > items; 
     const int MAX_SIZE = 5;
 
     public: 
@@ -25,7 +26,7 @@ class Library{
 
     void setLibraryName(const string& n); 
     const string& getLibraryName(); 
-    void addItem(LibraryItem* item);
+    void addItem(shared_ptr<LibraryItem> item);
     void displayItems();
 
 };

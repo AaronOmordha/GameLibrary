@@ -1,4 +1,8 @@
 #include "Developer.h"
+#include <iostream>
+#include <string>
+#include <vector>
+#include <memory>
 
 Developer::Developer(){     //Constructor
     name = "Unknown";
@@ -35,7 +39,7 @@ const string& Developer::getDeveloperType()const
 
 
 // Other Functons
-void Developer::addItem(LibraryItem* item)   //Add item to developer
+void Developer::addItem(shared_ptr<LibraryItem> item)   //Add item to developer
 {
     createdItems.push_back(item);
 }
@@ -50,7 +54,7 @@ void Developer::displayDeveloperInfo()const    //Display developer info
         cout << "No items created by this developer!\n" << endl;
         return;
     }else{
-        for(LibraryItem* item : createdItems){
+        for(shared_ptr<LibraryItem> item : createdItems){
             cout << item->getName() << endl;
         }
     }
@@ -58,32 +62,21 @@ void Developer::displayDeveloperInfo()const    //Display developer info
 
 Developer::~Developer(){    //Destructor
     cout << "Destroying Developer: " << name << endl;
-    for(LibraryItem* item : createdItems){
-        delete item;
-    }
-    createdItems.clear();
+    createdItems.clear(); // Shared pointer will automatically delete the items
 }
 
 // --------------------------ASSIGNMENT 2 INSTALLATIONS--------------------------
 Developer::Developer(const Developer& other){    //Copy Constructor
     name = other.name;
     developerType = other.developerType;
-    for(LibraryItem* item : other.createdItems){
-        createdItems.push_back(new LibraryItem(*item));
-    }
+    createdItems = other.createdItems; // shared_ptr handles copying
 }
 
 Developer& Developer::operator = (const Developer& other){    //Assignment Operator
     if(this != &other){
         name = other.name;
         developerType = other.developerType;
-        for(LibraryItem* item : createdItems){
-            delete item;
-        }
-        createdItems.clear();
-        for(LibraryItem* item : other.createdItems){
-            createdItems.push_back(new LibraryItem(*item));
-        }
+        createdItems = other.createdItems; // shared_ptr handles copying
     }
     return *this;
 }

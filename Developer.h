@@ -1,6 +1,7 @@
 #ifndef DEVELOPER_H
 #define DEVELOPER_H
 
+#include <memory>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -13,7 +14,7 @@ class Developer{
     private:
     string name;
     string developerType;
-    vector<LibraryItem*> createdItems;
+    vector< shared_ptr<LibraryItem> > createdItems;
 
     public:
     Developer();
@@ -26,7 +27,7 @@ class Developer{
     const string& getName()const;
     const string& getDeveloperType()const;
     
-    void addItem(LibraryItem* item);
+    void addItem(shared_ptr<LibraryItem> item);
     void displayDeveloperInfo()const;
 
     // -----------------------ASSIGNMENT 2 INSTALLATIONS-----------------------

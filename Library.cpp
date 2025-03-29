@@ -1,4 +1,5 @@
 #include "Library.h"
+#include <memory>
 #include <iostream>
 #include <string>
 #include <vector>  
@@ -21,7 +22,7 @@ const string& Library::getLibraryName(){    //Getter
     return libraryName;
 }
 
-void Library::addItem(LibraryItem* item){   //Add item to library
+void Library::addItem(shared_ptr<LibraryItem> item){   //Add item to library
     if(items.size() < MAX_SIZE){
         items.push_back(item);
         cout << "Added: " << item->getName() << "\nInto Library: " << libraryName << endl;
@@ -39,20 +40,17 @@ void Library::displayItems(){   //Display items in library
     cout << "\nLibrary: " << libraryName << endl;
 
     cout << "\nGames and applications in Library: " << endl;
-    for(LibraryItem* item : items){
+    for(shared_ptr<LibraryItem> item : items){
         cout << item->getName() << endl;
     }
 
     cout << "\nDetails: " << endl;
-    for(LibraryItem* item : items){
+    for(shared_ptr<LibraryItem> item : items){
         item->displayInfo();
     }
 }
 
 Library::~Library(){    //Destructor
     cout << "Destroying Library: " << libraryName << endl;
-    for(LibraryItem* item : items){
-        delete item;
-    }
-    items.clear();
+    //items.clear(); // Shared pointer will automatically delete the items
 }

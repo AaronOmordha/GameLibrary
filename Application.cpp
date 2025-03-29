@@ -27,7 +27,11 @@ Application::Application(const string& n, const string& rel, const string& dev, 
     }
 }
 
- 
+ // Destructor
+Application::~Application(){ // Destructor
+    cout << "Destroying Application: " << getName() << endl;
+}
+
 // Setter Functions
 
 void Application::setSubscriptionPrice(float subPrice, const string& subFreq)

@@ -17,6 +17,7 @@ class Game : public LibraryItem{ // Declare Game as a child class of LibraryItem
     // Constructors
     Game();
     Game(const string& n, const string& rel, const string& dev, const string& type, const string& location, double size, float p);
+    ~Game() override; // Destructor
 
     // Setter and Getter functions
     void setPrice(float);

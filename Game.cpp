@@ -21,6 +21,11 @@ Game::Game(const string& n, const string& rel, const string& dev, const string& 
     }
 }
 
+// Destructor
+Game::~Game(){ // Destructor
+    cout << "Destroying Game: " << getName() << endl;
+}
+
 // Setter Functions
 void Game::setPrice(float p){
     if (p < 0){

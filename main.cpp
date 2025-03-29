@@ -30,12 +30,12 @@ int main(){
     Library library2;
     library2.setLibraryName("Dave's Library");
 
-    Game* item1 = new Game();                       //Game Setup using pointers
-    Game* item2 = new Game();
-    Game* item3 = new Game();
-    Game* item4 = new Game();                                           
+    shared_ptr<Game> item1 =  make_shared<Game>();                       //Game Setup using pointers
+    shared_ptr<Game> item2 =  make_shared<Game>();
+    shared_ptr<Game> item3 =  make_shared<Game>();
+    shared_ptr<Game> item4 =  make_shared<Game>();                                           
 
-    Application* item5 = new Application();         //Application Setup using pointers
+    shared_ptr<Application> item5 = make_shared<Application>();         //Application Setup using pointers
 
     item1->setName("Doom");                         //Game Details
     item1->setDevName("id Software");

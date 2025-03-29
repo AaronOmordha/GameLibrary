@@ -16,7 +16,8 @@ class Application : public LibraryItem{  // Declare Game as a child class of Lib
     public:
     Application();
     Application(const string& n, const string& rel, const string& dev, const string& type, const string& location, double size, float subPrice, const string& subFreq);
-
+    ~Application() override; // Destructor
+    
     // Setter and Getter functions
     void setSubscriptionPrice(float subPrice, const string& subFreq);
 
