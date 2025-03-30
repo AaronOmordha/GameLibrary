@@ -6,11 +6,15 @@
 
 using namespace std;
 
+// Initialize static variable
+int Library::libraryCount = 0;
 Library::Library(){                 //Constructor
+    libraryCount++;
     libraryName = "Unknown Library";
 }
 
 Library::Library(const string& n){  //Constructor
+    libraryCount++;
     libraryName = n;
 }  
 
@@ -52,5 +56,7 @@ void Library::displayItems(){   //Display items in library
 
 Library::~Library(){    //Destructor
     cout << "Destroying Library: " << libraryName << endl;
+    items.clear(); // Clear the vector of items
+    libraryCount--;
     //items.clear(); // Shared pointer will automatically delete the items
 }

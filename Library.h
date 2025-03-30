@@ -15,11 +15,14 @@ using namespace std;
 class Library{
 
     private:
+
     string libraryName; 
     vector< shared_ptr<LibraryItem> > items; 
     const int MAX_SIZE = 5;
 
     public: 
+    static int libraryCount;
+    // Constructors and Destructor
     Library(); 
     Library(const string& n); 
     ~Library(); 

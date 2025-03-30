@@ -4,12 +4,15 @@
 #include <vector>
 #include <memory>
 
+int Developer::developerCount = 0;
 Developer::Developer(){     //Constructor
+    developerCount++;
     name = "Unknown";
     developerType = "Unknown";
 }
 
 Developer::Developer(const string& devName, const string& devType){   //Constructor
+    developerCount++;
     name = devName;
     developerType = devType;
 }
@@ -63,10 +66,12 @@ void Developer::displayDeveloperInfo()const    //Display developer info
 Developer::~Developer(){    //Destructor
     cout << "Destroying Developer: " << name << endl;
     createdItems.clear(); // Shared pointer will automatically delete the items
+    developerCount--;
 }
 
 // --------------------------ASSIGNMENT 2 INSTALLATIONS--------------------------
 Developer::Developer(const Developer& other){    //Copy Constructor
+    developerCount++;
     name = other.name;
     developerType = other.developerType;
     createdItems = other.createdItems; // shared_ptr handles copying

@@ -3,9 +3,11 @@
 #include <string>   
 using namespace std;
 
-
+// Initialize static variable
+int LibraryItem::libraryItemCount = 0;
 // Constructors
 LibraryItem::LibraryItem(){
+    libraryItemCount++;
     name = "Unknown";
     releaseDate = "Unknown";
     devName = "Unknown";
@@ -15,6 +17,7 @@ LibraryItem::LibraryItem(){
 }
 
 LibraryItem::LibraryItem(const string& n, const string& rel, const string& dev, const string& type, const string& location, double size){
+   libraryItemCount++;
     name = n;
     releaseDate = rel;
     devName = dev;
@@ -25,6 +28,7 @@ LibraryItem::LibraryItem(const string& n, const string& rel, const string& dev, 
 
 // -------------------------ASSIGNMENT 2 INSTALLATIONS-------------------------
 LibraryItem::LibraryItem(const LibraryItem& other){
+    libraryItemCount++;
     name = other.name;
     releaseDate = other.releaseDate;
     devName = other.devName;

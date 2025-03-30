@@ -3,15 +3,19 @@
 #include <string>
 using namespace std;
 
+// Initialize static variable
+int Game::gameCount = 0; // Static variable to keep track of the number of games
 // Constructors
 Game::Game() 
 : LibraryItem(){ // Call parent class constructor
+    gameCount++;
     price = 0.0;
     free = true;
 }
 
 Game::Game(const string& n, const string& rel, const string& dev, const string& type, const string& location, double size, float p)
 : LibraryItem(n, rel, dev, type, location, size){ // Call parent class constructor
+    gameCount++;
     price = p;
     if (price == 0){ // If price is 0, game is marked as free
         free = true;
@@ -24,6 +28,7 @@ Game::Game(const string& n, const string& rel, const string& dev, const string& 
 // Destructor
 Game::~Game(){ // Destructor
     cout << "Destroying Game: " << getName() << endl;
+    gameCount--;
 }
 
 // Setter Functions
@@ -68,6 +73,7 @@ void Game::displayInfo(){
 
 // --------------------------ASSIGNMENT 2 INSTALLATIONS--------------------------
     Game::Game(const Game& other) : LibraryItem(other){
+        gameCount++;
         price = other.price;
         free = other.free;
     }
@@ -98,6 +104,7 @@ void Game::displayInfo(){
     }
 
     ostream& operator<<(ostream& os, const Game& g) {
+        os << static_cast<const LibraryItem&>(g);;
         if (g.free == 1){
             os << "This game is free!" << endl;
         }

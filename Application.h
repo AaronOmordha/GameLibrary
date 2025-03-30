@@ -9,11 +9,14 @@ using namespace std;
 class Application : public LibraryItem{  // Declare Game as a child class of LibraryItem
 
     private:
+
     float subscriptionPrice;
     string subscriptionFrequency;
     bool free;
 
     public:
+    static int appCount;
+    // Constructors
     Application();
     Application(const string& n, const string& rel, const string& dev, const string& type, const string& location, double size, float subPrice, const string& subFreq);
     ~Application() override; // Destructor

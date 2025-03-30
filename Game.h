@@ -9,11 +9,12 @@ using namespace std;
 class Game : public LibraryItem{ // Declare Game as a child class of LibraryItem
 
     private:
+ 
     float price;
     bool free;
 
     public:
-
+   static int gameCount;
     // Constructors
     Game();
     Game(const string& n, const string& rel, const string& dev, const string& type, const string& location, double size, float p);

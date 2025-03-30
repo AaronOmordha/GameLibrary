@@ -12,11 +12,13 @@ using namespace std;
 class Developer{
     
     private:
+
     string name;
     string developerType;
     vector< shared_ptr<LibraryItem> > createdItems;
 
-    public:
+    public:    
+    static int developerCount;
     Developer();
     Developer(const string& devName, const string& devType);
     ~Developer();

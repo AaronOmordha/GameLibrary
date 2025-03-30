@@ -3,10 +3,13 @@
 #include <string>
 using namespace std;
 
+// Initialize static variable
+int Application::appCount = 0;
 // Constructors
 Application::Application() 
 : LibraryItem() // Call parent class constructor
 {
+    appCount++;
     subscriptionPrice = 0.0;
     free = true;
 }
@@ -14,6 +17,7 @@ Application::Application()
 Application::Application(const string& n, const string& rel, const string& dev, const string& type, const string& location, double size, float subPrice, const string& subFreq)
 : LibraryItem(n, rel, dev, type, location, size) // Call parent class overloaded constructor
 {
+    appCount++;
     subscriptionPrice = subPrice;
     if (subPrice == 0)
     { // If subscription price is 0, application is marked as free
@@ -30,6 +34,7 @@ Application::Application(const string& n, const string& rel, const string& dev, 
  // Destructor
 Application::~Application(){ // Destructor
     cout << "Destroying Application: " << getName() << endl;
+    appCount--;
 }
 
 // Setter Functions

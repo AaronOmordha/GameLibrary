@@ -98,17 +98,22 @@ int main(){
     dev3.displayDeveloperInfo();
     dev4.displayDeveloperInfo();
 
+    cout << "Library Item count: " << LibraryItem::libraryItemCount << endl;;
+    cout << "Game count: " << Game::gameCount << endl;
+    cout << "Application count: " << Application::appCount << endl;
+    cout << "Library count: " << Library::libraryCount << endl;
+    cout << "Developer count: " << Developer::developerCount << endl;
+
     /*--------------------------------------------- ASSIGNMENT 2 INSTALLATIONS ---------------------------------------------*/
 
     try{
         Game copiedGame = *item1;                       //Testing Copy Constructor
         cout << "\nCopied Game: \n" << copiedGame;
-        // cout << copiedGame.getPrice() << endl;
 
-        // Game assignedGame;                              //Testing Assignment Operator
-        // assignedGame = *item3;
-        // cout << "\nAssigned Game: \n" << assignedGame;
-        // assignedGame.getName();
+        Game assignedGame;                              //Testing Assignment Operator
+        assignedGame = *item3;
+        cout << "\nAssigned Game: \n" << assignedGame;
+
 
         if (*item1 == *item1){
             cout << "\n" << item1->getName() << " and " << item1->getName() << " are equal\n";
@@ -129,6 +134,9 @@ int main(){
         catch(const exception& e){
             cout << e.what() << endl;
         }
+
+
+
 
     // to keep console open...
     cout << "\nApplication finished, press enter to close...";
