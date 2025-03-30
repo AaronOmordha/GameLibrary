@@ -98,21 +98,24 @@ int main(){
     dev3.displayDeveloperInfo();
     dev4.displayDeveloperInfo();
 
+
+    /*--------------------------------------------- ASSIGNMENT 2 INSTALLATIONS ---------------------------------------------*/    
     cout << "Library Item count: " << LibraryItem::libraryItemCount << endl;;
     cout << "Game count: " << Game::gameCount << endl;
     cout << "Application count: " << Application::appCount << endl;
     cout << "Library count: " << Library::libraryCount << endl;
     cout << "Developer count: " << Developer::developerCount << endl;
 
-    /*--------------------------------------------- ASSIGNMENT 2 INSTALLATIONS ---------------------------------------------*/
+    Game copiedGame = *item1;                       //Testing Copy Constructor
+    cout << "\nCopied Game: \n" << copiedGame << endl;
+
+    Game assignedGame;                              //Testing Assignment Operator
+    assignedGame = *item3;
+    cout << "\nAssigned Game: \n" << assignedGame << endl;
+
 
     try{
-        Game copiedGame = *item1;                       //Testing Copy Constructor
-        cout << "\nCopied Game: \n" << copiedGame;
 
-        Game assignedGame;                              //Testing Assignment Operator
-        assignedGame = *item3;
-        cout << "\nAssigned Game: \n" << assignedGame;
 
 
         if (*item1 == *item1){
@@ -127,8 +130,8 @@ int main(){
             cout << item3->getName() << " is cheaper than " << item1->getName() << "\n";
         }
 
-        if (*item1 > *item3){
-            cout << item1->getName() << " is more expensive than " << item3->getName() << "\n";
+        if (*item3 > *item1){
+            cout << item3->getName() << " is more expensive than " << item1->getName() << "\n";
         }
 }
         catch(const exception& e){

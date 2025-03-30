@@ -109,7 +109,7 @@ void Game::displayInfo(){
             os << "This game is free!" << endl;
         }
         else{
-            os << static_cast<const LibraryItem&>(g) << "Price : $" << g.price << endl;
+            os << "Price : $" << g.price << endl;
         }
         return os;
     }
