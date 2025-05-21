@@ -11,15 +11,11 @@ Features
 
     Display a list of all games in the library.
 
-    Basic search and filtering functionality.
-
-    User interaction via a menu-driven interface.
-
 **Project Highlights**
 
     Written entirely in C++ using object-oriented principles.
 
-    Emphasizes modularity, code clarity, and reusability.
+    Emphasises modularity, code clarity, and reusability.
 
     Developed in collaboration with a team member, showcasing effective teamwork and communication.
 
@@ -27,11 +23,9 @@ Features
 
     Object-Oriented Programming (classes, inheritance, encapsulation)
 
-    File I/O operations for persistent data storage
-
     Data structures (e.g. arrays, vectors)
 
-    Menu systems and input validation
+    Menu systems
 
 **Tools & Technologies Used**
 
@@ -41,4 +35,4 @@ Features
 
     Basic terminal/console I/O
 
-    Any IDE of your choice (e.g. Visual Studio Code, Code::Blocks)
+    Completed using VS Code
