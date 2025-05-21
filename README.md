@@ -15,7 +15,7 @@ Features
 
     User interaction via a menu-driven interface.
 
-Project Highlights
+**Project Highlights**
 
     Written entirely in C++ using object-oriented principles.
 
@@ -23,7 +23,7 @@ Project Highlights
 
     Developed in collaboration with a team member, showcasing effective teamwork and communication.
 
-Concepts Demonstrated
+**Concepts Demonstrated**
 
     Object-Oriented Programming (classes, inheritance, encapsulation)
 
@@ -33,7 +33,7 @@ Concepts Demonstrated
 
     Menu systems and input validation
 
-Tools & Technologies Used
+**Tools & Technologies Used**
 
     C++
 
