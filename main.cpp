@@ -16,6 +16,7 @@ using namespace std;
 
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 int main(){
 
@@ -43,7 +44,7 @@ int main(){
     item1->setDeveloperType("Triple A");
     item1->setFileSize(100);
     item1->setFileLocation("C:\\Program_Files\\Doom");
-    item1->setPrice(0);
+    item1->setPrice(9.99);
 
     item2->setName("Terraria");
     item2->setDevName("Re-Logic");
@@ -51,7 +52,7 @@ int main(){
     item2->setDeveloperType("Indie");
     item2->setFileSize(15);
     item2->setFileLocation("C:\\Program_Files\\Terraria");
-    item2->setPrice(0.0);
+    item2->setPrice(4.99);
 
     item3->setName("Minecraft");
     item3->setDevName("Mojang");
@@ -116,8 +117,6 @@ int main(){
 
     try{
 
-
-
         if (*item1 == *item1){
             cout << "\n" << item1->getName() << " and " << item1->getName() << " are equal\n";
         }
@@ -138,7 +137,69 @@ int main(){
             cout << e.what() << endl;
         }
 
+    // USE OF STL SORT ALGORITHM USING DEFAULT MECHANISM
+    vector<shared_ptr<Game>> gameVector = {item1, item2, item3, item4}; // Vector to hold games
 
+    cout << "\n-- Before Default Sort --\n";
+    for (const auto& g : gameVector){
+        cout << g->getName() << " ";
+    }
+
+    sort(gameVector.begin(), gameVector.end(), [](const shared_ptr<Game>& a, const shared_ptr<Game>& b){
+        return a->getName() < b->getName(); // Sort by name
+    });
+
+    cout << "\n-- After Default Sort --\n";
+    for (const auto& g : gameVector){
+        cout << g->getName() << " ";
+    }
+    // END OF USE OF STL SORT ALGORITHM USING DEFAULT MECHANISM
+
+
+    //USE OF STL SORT ALGORTHM WITH SORT CRITERION EXPLICITLY SPECIFIED
+    cout << "\n-- Before Custom Sort (Price) --\n";
+    for(const auto& g : gameVector){
+        cout << g->getName() << "\n - $" << g->getPrice();
+    }
+
+    sort(gameVector.begin(), gameVector.end(), [](const shared_ptr<Game>& a, const shared_ptr<Game>& b){
+        return a->getPrice() < b->getPrice(); // Sort by price
+    });
+
+    cout << "\n-- After Custom Sort --\n";
+    for(const auto& g : gameVector){
+        cout << g->getName() << "\n - $" << g->getPrice() << endl;
+    }
+    // END OF USE OF STL SORT ALGORTHM WITH SORT CRITERION EXPLICITLY SPECIFIED
+
+
+    // FIND ALGORITHM
+    cout << "\n-- Find Algorithm: Minecraft --\n";
+
+    auto found = find_if(gameVector.begin(), gameVector.end(), [](const shared_ptr<Game>& g){
+        return g->getName() == "Minecraft"; // Find game by name
+    });
+
+    if(found != gameVector.end()){
+        cout << "Found: " << (*found)->getName() << ", Price: $" << (*found)->getPrice() << endl;
+    }else{
+        cout << "Game not found!" << endl;
+    }
+    // END OF FIND ALGORITHM
+
+
+    // Handling for built in exception types 
+    cout << "\n -- Exception Handling --\n";
+    try{
+        vector<string> devNames = {"id Software", "Re-Logic", "Mojang", "Adobe"};
+        cout << "Accessing 5th developer: \n";
+        string dev = devNames.at(4);
+        cout << "Developer: " << dev << endl;
+    }
+    catch(const out_of_range& e){
+        cout << "Caught built in exception: " << e.what() << endl;
+    }
+    // End of handling for built in exception types (5)
 
 
     // to keep console open...
