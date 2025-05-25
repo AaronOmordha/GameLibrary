@@ -1,0 +1,30 @@
+Library Name: Paul's Library
+Items Count: 3
+
+Type: Game
+Name: Doom
+Release Date: August 21st 1984
+Developer: id Software
+Developer Type: Triple A
+File Size: 100MB
+File Location: C:\Program_Files\Doom
+
+
+Type: Game
+Name: Terraria
+Release Date: May 16th 2011
+Developer: Re-Logic
+Developer Type: Indie
+File Size: 15MB
+File Location: C:\Program_Files\Terraria
+
+
+Type: Application
+Name: Photoshop
+Release Date: June 1st 1984
+Developer: Adobe
+Developer Type: Triple A
+File Size: 1000MB
+File Location: C:\Program_Files\Photoshop
+
+

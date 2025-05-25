@@ -27,6 +27,10 @@ class Library{
     Library(const string& n); 
     ~Library(); 
 
+    // File Handling
+    void saveToFile(const string& filename) const;
+    void loadFromFile(const string& filename);
+
     void setLibraryName(const string& n); 
     const string& getLibraryName(); 
     void addItem(shared_ptr<LibraryItem> item);

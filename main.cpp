@@ -202,6 +202,9 @@ int main(){
     // End of handling for built in exception types (5)
 
 
+
+    // File handling
+    library1.saveToFile("library1.txt");  // Save library to file
     // to keep console open...
     cout << "\nApplication finished, press enter to close...";
     cin.get();
