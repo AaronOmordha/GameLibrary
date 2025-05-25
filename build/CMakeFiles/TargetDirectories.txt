@@ -1,0 +1,6 @@
+C:/Users/C23339461/OneDrive - Technological University Dublin/Documents/Game Lib/GameLibrary/build/CMakeFiles/PlaylistManager.dir
+C:/Users/C23339461/OneDrive - Technological University Dublin/Documents/Game Lib/GameLibrary/build/CMakeFiles/gcov.dir
+C:/Users/C23339461/OneDrive - Technological University Dublin/Documents/Game Lib/GameLibrary/build/CMakeFiles/scrub.dir
+C:/Users/C23339461/OneDrive - Technological University Dublin/Documents/Game Lib/GameLibrary/build/CMakeFiles/RUN_TESTS.dir
+C:/Users/C23339461/OneDrive - Technological University Dublin/Documents/Game Lib/GameLibrary/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/C23339461/OneDrive - Technological University Dublin/Documents/Game Lib/GameLibrary/build/CMakeFiles/ZERO_CHECK.dir
